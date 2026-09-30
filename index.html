@@ -26,7 +26,7 @@
   <div class="side-card">
    <div class="side-top"><div><div class="eyebrow">我的学习进度</div><div class="progress-number"><strong id="total-percent">0%</strong><span>任务完成</span></div></div><button class="primary full" id="continue">继续学习 ↗</button></div>
    <div class="track" role="progressbar" aria-label="全部任务完成度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-track"><span style="width:0%"></span></div>
-   <div class="small" id="total-tasks">0 / 90 项任务</div>
+   <div class="small" id="total-tasks">正在载入任务…</div>
    <div class="stats"><span><strong id="completed-days">0</strong>/ 30 天完成</span><span><strong id="remaining-days">30</strong>天待学</span></div>
    <label class="date-setting">学习开始日期<input type="date" id="start-date" min="2020-01-01" max="2100-12-01"></label>
    <p class="small" id="date-range"></p>
@@ -44,11 +44,11 @@
    <div class="orbit" aria-hidden="true"></div><div class="orbit-dot" aria-hidden="true"></div>
    <div class="eyebrow">YOUR 30-DAY STUDY PLAN</div>
    <h1>从「听过」到「会选」。<br><em>每天，向 SAA 靠近一步。</em></h1>
-   <p>先理解服务解决什么问题，再练习根据场景选方案。每天完成三件小事：学一学、讲清楚、练一练。</p>
-   <div class="hero-tags"><span>每天约 2–3 小时</span><span>AI 讲解 / 视频任选</span><span>每周回顾 · 三次模拟</span></div>
+   <p>先理解服务解决什么问题，再练习根据场景选方案。每天完成学一学、讲清楚、练一练；假期再加一段实操或加练。</p>
+   <div class="hero-tags"><span>至 10/8：每天约 4 小时</span><span>工作日 1–1.5 小时</span><span>周末约 3 小时</span></div>
   </section>
   <div class="intro">
-   <div class="intro-item"><strong>01 / 按自己的基础调整</strong><p>熟悉的内容快速复习；不懂的先补课。日期是参考，任务可随时补做。</p></div>
+   <div class="intro-item"><strong>01 / 假期多学，工作日少学</strong><p>9/30–10/8 把基础和实操学扎实；之后工作日小步补课，周末留给模拟与集中复习。</p></div>
    <div class="intro-item"><strong>02 / 真做完，再打勾</strong><p>能用自己的话解释、能说出选项理由，才算这次练习有收获。</p></div>
    <div class="intro-item"><strong>03 / 把疑问留下来</strong><p>每天记下一个不懂的点。复制学习提问给 AI，或用课程补这一段。</p></div>
   </div>
@@ -59,7 +59,7 @@
    <div class="days" id="days"></div>
   </section>
   <div class="bottom-grid">
-   <section class="guide-card"><h3>每天怎么学？</h3><p>参考节奏：讲解 60 分钟 → 自己解释 20 分钟 → 练题 / 画图 30 分钟 → 复盘 10 分钟。模拟日单独留出约 3 小时。</p><ul><li>AI 或视频都可以主讲，关键细节用官方资料核对。</li><li>错题写三句话：题目要什么、为什么选它、其他选项差在哪。</li><li>实操前看费用；结束后删除实验资源。暂时没账号可以先画图推演。</li></ul></section>
+   <section class="guide-card"><h3>按当天时间来学</h3><p>时间是专注学习的时长，中间可以休息。假期分上午、下午两段，工作日保留一小段即可。</p><ul><li>假期约 4 小时：理解 90 分钟、实操 / 画图 90 分钟、练题和复盘 60 分钟。</li><li>工作日 1–1.5 小时：补一个小知识点，做 6–10 道题，记录一个疑问。</li><li>周末约 3 小时；模拟日完整计时 130 分钟，剩余时间先复盘最不确定的题。</li><li>基础实操尽量在 10/8 前完成；10/11 留给保存资料、清理实验资源。没账号可画图推演。</li><li>新开始使用本计划时，默认从 9/30 排到 10/29；修改开始日期后会更新日期与时长标签；加练和完整模拟请自行移到时间充足的休息日。</li></ul></section>
    <section class="guide-card readiness"><div class="eyebrow">考前检查</div><h3 style="margin-top:7px">完成计划 ≠ 已经准备好考试</h3><p id="readiness-text">先完成学习，再用没做过的模拟题检验自己。</p><p style="margin-top:10px">参考目标：至少两套首次作答的独立模拟题达到 80%，并能解释错题。这个目标用于规划，不是 AWS 官方通过线，也不保证通过。</p></section>
   </div>
   <details class="resource-box"><summary>学习资料与常见词 · 需要时再打开</summary>
@@ -77,6 +77,7 @@
     <div><strong>RTO / RPO · 恢复目标</strong>RTO：最多能停多久。RPO：最多能丢失多长时间的数据。选灾备方案前，先问清这两个要求。</div>
    </div>
    <p>考试范围：安全 30% · 弹性 26% · 高性能 24% · 成本优化 20%。计划按主题学习，四类要求会交叉出现。以报考时的官方指南为准。</p>
+   <p style="margin-top:10px">作息按你的安排：9/30–10/8 都可多学；之后周末多学、工作日少学。10/10 按调休工作日安排。<a href="https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm" target="_blank" rel="noopener noreferrer">2026 年官方调休安排 ↗</a>。若当天临时有事，任务可顺延；完整模拟需要单独留出 3 小时。</p>
   </details>
   <footer><span>小步前进，把「为什么」学明白。</span><span>内容核对：2026-09-30 · 学习计划草稿</span></footer>
  </main>
@@ -87,13 +88,13 @@
 <script>
 'use strict';
 const weeks = [
- {name:'打好基础',range:'第 1–7 天',description:'认识 AWS，搞懂权限、服务器、网络和存储。',goal:'能画出一个简单网站的基本结构。'},
- {name:'把服务组合起来',range:'第 8–14 天',description:'让应用更可靠：分流、扩容、数据库、缓存和消息队列。',goal:'能解释为什么单台服务器不够，以及该怎么改。'},
- {name:'补齐考点，练场景题',range:'第 15–21 天',description:'补安全、容器、数据迁移和灾备，再练习根据要求选方案。',goal:'每道题都能说出需求、理由和取舍。'},
- {name:'模拟考试与收尾',range:'第 22–30 天',description:'三次限时模拟，穿插专项复习，最后检查是否适合赴考。',goal:'用陌生题验证水平，不用重复题的记忆判断准备程度。'}
+ {name:'假期打牢基础',range:'第 1–7 天',description:'每天分两段学：权限、服务器、网络、存储，再组合成可靠的网站。',goal:'基础实操尽量趁假期完成。'},
+ {name:'假期收尾，恢复小步学',range:'第 8–14 天',description:'假期最后两天学数据库和 Lambda；工作日减量，周日整理实操与笔记。',goal:'把新学到的服务连成简单架构。'},
+ {name:'补齐考点，第一次模拟',range:'第 15–21 天',description:'工作日学安全、灾备和成本；周六完整模拟，周日学迁移，随后按错题补课。',goal:'用第一套陌生题找到真实弱项。'},
+ {name:'周末模拟，工作日复盘',range:'第 22–30 天',description:'周末做两次完整模拟；工作日补弱项、整理笔记，最后确认考试安排。',goal:'根据模拟表现决定是否适合赴考。'}
 ];
-// 每天三项任务：学习 → 自己解释 → 应用。内容可通过 AI、视频或官方文档学习。
-const plan = [
+// 每天三项基础任务；假期与实操收尾日增加一项练习。内容可通过 AI、视频或官方文档学习。
+const topics = [
  ['认识 AWS 和考试','AWS 基础','先有一张地图，再记服务名称。',
   '认识地域、可用区、共享责任模型；读官方考试指南，了解四类考察方向。',
   '用自己的话解释：AWS 管什么，我管什么？地域和可用区有什么区别？',
@@ -214,18 +215,56 @@ const plan = [
   '轻读一页笔记和常错服务对比，复述三个最容易混淆的概念。',
   '确认考试安排和证件，准备好路线或线上环境；保留足够睡眠。',
   '若尚未准备好，写下下一阶段的两个学习目标；已赴考则待收到正式结果后再记录，不把计划完成当作通过。']
-].map((row,i)=>({id:i+1,week:i<7?0:i<14?1:i<21?2:3,title:row[0],tag:row[1],goal:row[2],tasks:row.slice(3),mock:[22,26,28].includes(i+1),time:[22,26,28].includes(i+1)?'约 3 小时':i+1===30?'约 1 小时':'约 2–3 小时'}));
+].map((row,i)=>({id:i+1,title:row[0],tag:row[1],goal:row[2],tasks:row.slice(3),mock:[22,26,28].includes(i+1)}));
+// id 是原版主题编号：重排日期时，已有勾选、笔记和成绩仍对应同一个主题。
+const scheduleOrder=[1,2,3,4,5,6,8,9,12,10,7,11,13,14,15,18,19,22,17,23,24,16,20,21,26,28,27,25,29,30];
+const extraPractice={
+ 1:'多学一段：浏览 AWS 控制台，找到 IAM、EC2、S3 和账单页面。记录已有资源，再预习“用户、角色、策略”的区别。',
+ 2:'实操 / 画图：查看 IAM 角色的信任关系和权限策略，理解“谁能使用这个角色”与“角色能做什么”；练习解释 EC2 如何获得访问 S3 的权限。',
+ 3:'实操 / 画图：选一台适合小实验的 EC2，确认预计费用后体验启动、停止、终止；观察 EBS 的保留选项，结束后清理本次实验的磁盘与地址。',
+ 4:'实操 / 画图：在控制台查看子网、路由表和安全组，画出一条完整网络路径；先用图理解 NAT，不必创建 NAT Gateway。',
+ 5:'多练一段：给“公网网站、私有数据库、公司访问 AWS”各画一张图，再练 10 道新题；每条路由和访问规则都说清用途。',
+ 6:'实操 / 画图：用私有 S3 桶上传两个小文件，体验版本控制，再比较 EBS / EFS；结束后清理本次实验桶内的文件和历史版本。',
+ 8:'多练一段：把前面的网站改成两台服务器、跨可用区、前置 ALB，并说明扩缩容规则；先画图推演，有余力再确认费用后验证。',
+ 9:'多学一段：观察 RDS 配置页，比较 Multi-AZ、只读副本和备份，不必提交创建；再用三个业务场景选择方案并解释理由。',
+ 12:'实操 / 画图：运行一个简单 Lambda 测试事件，查看执行结果和日志；认识 SQS 如何接收任务。结束后清理本次实验的函数及相关实验日志。',
+ 11:'周日收尾：保存实验截图和笔记，确认哪些资源属于本次实验并清理；已有业务资源先确认用途。按账号页面标注的 10/12 到期日，尽量在 10/11 完成。'
+};
+const lighterPractice={
+ 10:'做 6 道数据库与缓存题，只整理 RDS / DynamoDB / ElastiCache 三者各适合什么情况。',
+ 7:'做 10 道核心混合题，记录答错和猜对的题；只补一个最不懂的知识点。',
+ 13:'为一个跨地区网站画 DNS 和内容缓存方案，做 6 道网络题；监控服务先记清用途。',
+ 14:'做 8 道混合题，按安全、弹性、性能或成本分类；把不懂的点列入后续补课。',
+ 15:'做 8 道安全题；优先讲清 KMS、证书和密码管理，其余安全服务先了解用途。',
+ 18:'比较两种灾备方案，做 8 道题；先根据 RTO / RPO 排除不满足要求的方案。',
+ 19:'做 8 道成本题，每题先写不可牺牲的要求，再比较购买方式、存储与传输费用。',
+ 23:'做 8 道这个主题的新题验证理解；记录两条最容易忘的结论。',
+ 24:'做 8 道第二个弱主题的新题；看同一种错误是否还在重复。',
+ 16:'做 6 道治理和计算题；各写一个多账号管理与容器部署的简单方案。',
+ 20:'做 10 道新场景题，先说需求和答案理由再看解析；猜对的题也复盘。',
+ 21:'做 10 道混合题，检查两项最弱主题；确认周末还有两套未做过的模拟题。',
+ 27:'每个问题各做 5 道新题验证；重点解决最近两次模拟仍不稳定的内容。',
+ 25:'用 40 分钟做 20 道新混合题，剩余时间核对理由；复习最常混淆的服务。'
+};
+const plan=scheduleOrder.map((id,i)=>{const topic=topics.find(t=>t.id===id),tasks=[...topic.tasks];if(lighterPractice[id])tasks[2]=lighterPractice[id];if(extraPractice[id])tasks.push(extraPractice[id]);return {...topic,day:i+1,week:i<7?0:i<14?1:i<21?2:3,tasks};});
+const dayByTopic=id=>plan.find(d=>d.id===id).day;
+for(const d of plan){d.tasks=d.tasks.map(t=>t.replace(/第 (7|22|26) 天/g,(_,id)=>`第 ${dayByTopic(Number(id))} 天`));}
+plan.find(d=>d.id===8).tasks[2]='把前面画的网站改成多可用区架构，练 10 道扩缩容题；有账号可在确认费用后选择是否验证并清理。';
+plan.find(d=>d.id===14).tasks[0]='快速回顾假期以来的核心服务，优先整理数据库、缓存、Lambda、队列和 DNS 的区别。';
+plan.find(d=>d.id===16).tasks[0]='先理解 Organizations / SCP 的权限边界，以及 ECS / EKS / Fargate 的用途；Identity Center、Control Tower、CloudFormation 先了解分别解决什么问题。';
+plan.find(d=>d.id===27).tasks[0]='选最近两次模拟中仍不稳定的两个问题，核对相关服务的关键条件、限制与配置。';
+const TOTAL_TASKS=plan.reduce((n,d)=>n+d.tasks.length,0);
 const STORAGE_KEY='aws-saa-study-plan-v1';
 const $=id=>document.getElementById(id);
-const labels=['学一学','讲清楚','练一练'];
+const labels=['学一学','讲清楚','练一练','加练 / 实操'];
 const docBase='https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/';
 function taipeiToday(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const get=t=>parts.find(p=>p.type===t).value;return `${get('year')}-${get('month')}-${get('day')}`;}
 function dateOK(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&value>='2020-01-01'&&value<='2100-12-01'&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;}
-function initialState(){return {version:1,startDate:taipeiToday(),tasks:{},notes:{},scores:{}};}
+function initialState(){return {version:1,startDate:'2026-09-30',tasks:{},notes:{},scores:{}};}
 function validateState(data){
  if(!data||data.version!==1||!dateOK(data.startDate)||typeof data.tasks!=='object'||!data.tasks||Array.isArray(data.tasks)||typeof data.notes!=='object'||!data.notes||Array.isArray(data.notes)||typeof data.scores!=='object'||!data.scores||Array.isArray(data.scores))throw new Error('这不是有效的学习进度备份。');
  const result=initialState();result.startDate=data.startDate;
- for(const d of plan){for(let i=0;i<3;i++){const key=`${d.id}-${i}`;if(Object.hasOwn(data.tasks,key)){if(typeof data.tasks[key]!=='boolean')throw new Error('任务数据格式不正确。');result.tasks[key]=data.tasks[key];}}
+ for(const d of plan){for(let i=0;i<d.tasks.length;i++){const key=`${d.id}-${i}`;if(Object.hasOwn(data.tasks,key)){if(typeof data.tasks[key]!=='boolean')throw new Error('任务数据格式不正确。');result.tasks[key]=data.tasks[key];}}
   if(Object.hasOwn(data.notes,d.id)){if(typeof data.notes[d.id]!=='string'||data.notes[d.id].length>3000)throw new Error('笔记格式不正确或超过长度限制。');result.notes[d.id]=data.notes[d.id];}
   if(d.mock&&Object.hasOwn(data.scores,d.id)){const s=data.scores[d.id];if(!s||typeof s.fresh!=='boolean'||!(s.correct===null||(Number.isInteger(s.correct)&&s.correct>=0&&s.correct<=65)))throw new Error('模拟题成绩格式不正确。');result.scores[d.id]={correct:s.correct,fresh:s.fresh};}
  }return result;
@@ -234,24 +273,25 @@ let state=initialState(),storageAvailable=true,loadWarning='';
 try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)state=validateState(JSON.parse(saved));}catch(error){loadWarning='无法读取已保存的进度。可导入备份；旧数据在下一次保存前不会被主动删除。';if(error.name==='SecurityError')storageAvailable=false;}
 let selectedWeek=0,filter='all',query='',openDays=new Set(),toastTimer;
 function doneCount(d){return d.tasks.filter((_,i)=>state.tasks[`${d.id}-${i}`]===true).length;}
-function finished(d){return doneCount(d)===3;}
+function finished(d){return doneCount(d)===d.tasks.length;}
 const firstPending=plan.find(d=>!finished(d));selectedWeek=firstPending?firstPending.week:3;if(firstPending)openDays.add(firstPending.id);
 function notify(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4000);}
 function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));storageAvailable=true;$('storage-warning').hidden=true;$('save-status').textContent='已自动保存。进度保存在当前浏览器，换设备前请导出备份。';}catch(error){storageAvailable=false;$('storage-warning').hidden=false;$('save-status').textContent='当前无法自动保存，请导出备份。';}}
 function dateFor(day){const date=new Date(state.startDate+'T00:00:00Z');date.setUTCDate(date.getUTCDate()+day-1);return date.toISOString().slice(0,10);}
 function shortDate(day){const parts=dateFor(day).split('-');return `${Number(parts[1])} 月 ${Number(parts[2])} 日`;}
+function dailyLoad(d){const date=dateFor(d.day),weekday=new Date(date+'T00:00:00Z').getUTCDay();if(d.mock)return {name:'完整模拟',time:'约 3 小时'};if(d.id===30)return {name:'轻复习',time:'约 1 小时'};if(date>='2026-09-30'&&date<='2026-10-08')return {name:'假期多学',time:'约 4 小时'};if(date!=='2026-10-10'&&(weekday===0||weekday===6))return {name:'周末集中学',time:'约 3 小时'};return {name:date==='2026-10-10'?'调休工作日':'工作日少量学',time:'约 1–1.5 小时'};}
 function elem(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
 function updateProgress(){
- const count=plan.reduce((n,d)=>n+doneCount(d),0),days=plan.filter(finished).length,percent=Math.round(count/90*100);
- $('total-percent').textContent=percent+'%';$('total-tasks').textContent=`${count} / 90 项任务`;$('completed-days').textContent=days;$('remaining-days').textContent=30-days;
+ const count=plan.reduce((n,d)=>n+doneCount(d),0),days=plan.filter(finished).length,percent=Math.round(count/TOTAL_TASKS*100);
+ $('total-percent').textContent=percent+'%';$('total-tasks').textContent=`${count} / ${TOTAL_TASKS} 项任务`;$('completed-days').textContent=days;$('remaining-days').textContent=30-days;
  $('overall-track').setAttribute('aria-valuenow',percent);$('overall-track').firstElementChild.style.width=percent+'%';$('start-date').value=state.startDate;$('date-range').textContent=`${shortDate(1)} — ${shortDate(30)} · 30 天参考安排`;
  $('continue').textContent=days===30?'回顾学习 ↗':'继续学习 ↗';
- const subset=plan.filter(d=>d.week===selectedWeek),weekCount=subset.reduce((n,d)=>n+doneCount(d),0);
- $('week-count').textContent=`${weekCount} / ${subset.length*3} 项完成`;$('week-bar').style.width=(weekCount/(subset.length*3)*100)+'%';
+ const subset=plan.filter(d=>d.week===selectedWeek),weekCount=subset.reduce((n,d)=>n+doneCount(d),0),weekTotal=subset.reduce((n,d)=>n+d.tasks.length,0);
+ $('week-count').textContent=`${weekCount} / ${weekTotal} 项完成`;$('week-bar').style.width=(weekCount/weekTotal*100)+'%';
  document.querySelectorAll('[data-week]').forEach(b=>{const w=Number(b.dataset.week),group=plan.filter(d=>d.week===w);b.querySelector('.small').textContent=`${weeks[w].range} · ${group.filter(finished).length}/${group.length} 天完成`;});
  const recorded=plan.filter(d=>d.mock&&state.scores[d.id]?.correct!==null&&state.scores[d.id]?.correct!==undefined);
  const qualifies=recorded.filter(d=>state.scores[d.id].fresh&&state.scores[d.id].correct>=52);
- const scoreText=recorded.map(d=>`第 ${d.id} 天 ${Math.round(state.scores[d.id].correct/65*100)}%`).join(' · ');
+ const scoreText=recorded.map(d=>`${shortDate(d.day)} ${Math.round(state.scores[d.id].correct/65*100)}%`).join(' · ');
  $('readiness-text').textContent=!recorded.length?'先完成学习，再用没做过的模拟题检验自己。':`${scoreText}。${qualifies.length>=2?'已有两套首次作答达到参考目标；还要检查错题能否解释、作答是否独立且按时完成。':'继续补弱项，再用新题验证；参考目标只统计勾选“首次作答”的成绩。'}`;
 }
 function renderNav(){
@@ -262,22 +302,22 @@ function scopeLink(d){const domain=d.tag.includes('安全')||d.id===2?'domain1':
 function createDay(d){
  const card=elem('details','day'+(finished(d)?' complete':''));card.id='day-'+d.id;card.open=openDays.has(d.id);
  card.addEventListener('toggle',()=>{if(card.open)openDays.add(d.id);else openDays.delete(d.id);});
- const summary=elem('summary');summary.append(elem('span','day-marker',finished(d)?'✓':String(d.id).padStart(2,'0')));
- const head=elem('div','day-main');head.append(elem('div','day-title',d.title),elem('div','day-meta',`第 ${d.id} 天 · ${shortDate(d.id)} · ${d.time} · ${d.tag}`));summary.append(head);
- const right=elem('div','day-right');right.append(elem('span','day-count',`${doneCount(d)}/3`),elem('span','arrow','⌄'));summary.append(right);card.append(summary);
+ const summary=elem('summary');summary.append(elem('span','day-marker',finished(d)?'✓':String(d.day).padStart(2,'0')));
+ const load=dailyLoad(d),head=elem('div','day-main');head.append(elem('div','day-title',d.title),elem('div','day-meta',`第 ${d.day} 天 · ${shortDate(d.day)} · ${load.name} · ${load.time}`));summary.append(head);
+ const right=elem('div','day-right');right.append(elem('span','day-count',`${doneCount(d)}/${d.tasks.length}`),elem('span','arrow','⌄'));summary.append(right);card.append(summary);
  const body=elem('div','day-body'),goal=elem('p','goal');goal.append(elem('strong','','今天的目标：'),document.createTextNode(d.goal));body.append(goal);
- const tasks=elem('div','tasks');d.tasks.forEach((task,i)=>{const label=elem('label','task'),check=elem('input');check.type='checkbox';check.checked=state.tasks[`${d.id}-${i}`]===true;check.dataset.task=`${d.id}-${i}`;check.setAttribute('aria-label',`第 ${d.id} 天 ${labels[i]}：${task}`);const content=elem('span');content.append(elem('b','',labels[i]),document.createTextNode(task));label.append(check,content);check.addEventListener('change',()=>{state.tasks[`${d.id}-${i}`]=check.checked;save();card.classList.toggle('complete',finished(d));card.querySelector('.day-marker').textContent=finished(d)?'✓':String(d.id).padStart(2,'0');card.querySelector('.day-count').textContent=`${doneCount(d)}/3`;updateProgress();if(filter!=='all')renderDays();});tasks.append(label);});body.append(tasks);
+ const tasks=elem('div','tasks');d.tasks.forEach((task,i)=>{const label=elem('label','task'),check=elem('input');check.type='checkbox';check.checked=state.tasks[`${d.id}-${i}`]===true;check.dataset.task=`${d.id}-${i}`;check.setAttribute('aria-label',`第 ${d.day} 天 ${labels[i]}：${task}`);const content=elem('span');content.append(elem('b','',labels[i]),document.createTextNode(task));label.append(check,content);check.addEventListener('change',()=>{state.tasks[`${d.id}-${i}`]=check.checked;save();card.classList.toggle('complete',finished(d));card.querySelector('.day-marker').textContent=finished(d)?'✓':String(d.day).padStart(2,'0');card.querySelector('.day-count').textContent=`${doneCount(d)}/${d.tasks.length}`;updateProgress();if(filter!=='all')renderDays();});tasks.append(label);});body.append(tasks);
  const tools=elem('div','tools'),copy=elem('button','copy','复制今日学习提问 ↗');copy.addEventListener('click',()=>showPrompt(d));const link=elem('a','',d.id===1||d.id>=21?'官方备考入口 ↗':'相关考试要求 ↗');link.href=d.id===1||d.id>=21?'https://aws.amazon.com/certification/certified-solutions-architect-associate/':scopeLink(d);link.target='_blank';link.rel='noopener noreferrer';tools.append(copy,link);body.append(tools);
- if(d.mock){const mock=elem('div','mock'),line=elem('label','','模拟成绩：答对 '),score=elem('input');score.type='number';score.min='0';score.max='65';score.step='1';score.inputMode='numeric';score.setAttribute('aria-label',`第 ${d.id} 天模拟考试答对题数`);score.value=state.scores[d.id]?.correct??'';const result=elem('span','score-result');function updateScoreLabel(){const n=state.scores[d.id]?.correct;result.textContent=n===null||n===undefined?'未记录':Math.round(n/65*100)+'%';}updateScoreLabel();line.append(score,document.createTextNode(' / 65 题'),result);mock.append(line);const fresh=elem('label','fresh'),flag=elem('input');flag.type='checkbox';flag.checked=state.scores[d.id]?.fresh??false;fresh.append(flag,document.createTextNode(' 这套题是首次作答，已按 130 分钟独立完成'));mock.append(fresh);score.addEventListener('change',()=>{const n=score.value===''?null:Number(score.value);if(n!==null&&(!Number.isInteger(n)||n<0||n>65)){notify('请输入 0–65 之间的整数。');score.value=state.scores[d.id]?.correct??'';return;}state.scores[d.id]={correct:n,fresh:flag.checked};save();updateScoreLabel();updateProgress();});flag.addEventListener('change',()=>{const old=state.scores[d.id]?.correct??null;state.scores[d.id]={correct:old,fresh:flag.checked};save();updateProgress();});body.append(mock);}
+ if(d.mock){const mock=elem('div','mock'),line=elem('label','','模拟成绩：答对 '),score=elem('input');score.type='number';score.min='0';score.max='65';score.step='1';score.inputMode='numeric';score.setAttribute('aria-label',`第 ${d.day} 天模拟考试答对题数`);score.value=state.scores[d.id]?.correct??'';const result=elem('span','score-result');function updateScoreLabel(){const n=state.scores[d.id]?.correct;result.textContent=n===null||n===undefined?'未记录':Math.round(n/65*100)+'%';}updateScoreLabel();line.append(score,document.createTextNode(' / 65 题'),result);mock.append(line);const fresh=elem('label','fresh'),flag=elem('input');flag.type='checkbox';flag.checked=state.scores[d.id]?.fresh??false;fresh.append(flag,document.createTextNode(' 这套题是首次作答，已按 130 分钟独立完成'));mock.append(fresh);score.addEventListener('change',()=>{const n=score.value===''?null:Number(score.value);if(n!==null&&(!Number.isInteger(n)||n<0||n>65)){notify('请输入 0–65 之间的整数。');score.value=state.scores[d.id]?.correct??'';return;}state.scores[d.id]={correct:n,fresh:flag.checked};save();updateScoreLabel();updateProgress();});flag.addEventListener('change',()=>{const old=state.scores[d.id]?.correct??null;state.scores[d.id]={correct:old,fresh:flag.checked};save();updateProgress();});body.append(mock);}
  const noteLabel=elem('label','notes-label','今天的疑问 / 错题提醒'),note=elem('textarea','note');note.rows=2;note.maxLength=3000;note.placeholder='例如：Multi-AZ 和只读副本，我还分不清…';note.value=state.notes[d.id]??'';note.id=`note-${d.id}`;noteLabel.htmlFor=note.id;note.addEventListener('input',()=>{state.notes[d.id]=note.value;save();});body.append(noteLabel,note);card.append(body);return card;
 }
 function renderDays(){
  const w=weeks[selectedWeek];$('week-kicker').textContent=`阶段 ${String(selectedWeek+1).padStart(2,'0')} / ${w.range}`;$('week-title').textContent=w.name;$('week-description').textContent=w.description;
  document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
  const visible=plan.filter(d=>d.week===selectedWeek&&(filter==='all'||(filter==='complete'?finished(d):!finished(d)))&&[d.title,d.tag,d.goal,...d.tasks].join(' ').toLowerCase().includes(query.toLowerCase()));
- $('days').replaceChildren(...visible.map(createDay));if(!visible.length)$('days').append(elem('div','empty',query?'这个阶段没有匹配的主题。试试其他关键词或切换阶段。':filter==='pending'?'本阶段的任务都完成了。可以切换下一阶段，或回看笔记。':'本阶段还没有完成的学习日。每天三项任务都勾选后会出现在这里。'));
+ $('days').replaceChildren(...visible.map(createDay));if(!visible.length)$('days').append(elem('div','empty',query?'这个阶段没有匹配的主题。试试其他关键词或切换阶段。':filter==='pending'?'本阶段的任务都完成了。可以切换下一阶段，或回看笔记。':'本阶段还没有完成的学习日。当天全部任务都勾选后会出现在这里。'));
 }
-function promptFor(d){return `我正在准备 AWS SAA-C03，今天是第 ${d.id} 天，主题是“${d.title}”。请用简单中文教我，先解释服务解决什么问题，再解释服务之间的区别。今天的目标：${d.goal}\n\n学习任务：\n${d.tasks.map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\n请先问我两道基础问题，了解我的水平，然后按小节讲解。每小节让我用自己的话解释，确认理解后再继续。最后用新的场景题检验我，一次一题，等我回答和说明理由后再给解析；说明其他选项为什么不合适。涉及服务限制、功能和配置时，请核对并链接 AWS 官方文档，不确定的内容请明确指出。模拟考试日请帮我准备流程或复盘，我会使用独立模拟题检验成绩。`;}
+function promptFor(d){return `我正在准备 AWS SAA-C03，今天是第 ${d.day} 天（${dateFor(d.day)}），可用时间${dailyLoad(d).time}，主题是“${d.title}”。请用简单中文教我，先解释服务解决什么问题，再解释服务之间的区别。今天的目标：${d.goal}\n\n学习任务：\n${d.tasks.map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\n请先问我两道基础问题，了解我的水平，然后按小节讲解。请按今天的可用时间控制范围；工作日优先讲一个小知识点，不要一次塞入大量细节。每小节让我用自己的话解释，确认理解后再继续。最后用新的场景题检验我，一次一题，等我回答和说明理由后再给解析；说明其他选项为什么不合适。涉及服务限制、功能和配置时，请核对并链接 AWS 官方文档，不确定的内容请明确指出。模拟考试日请帮我准备流程或复盘，我会使用独立模拟题检验成绩。`;}
 async function copyText(value){try{await navigator.clipboard.writeText(value);notify('已复制，可以粘贴给 AI 开始学习。');return true;}catch(error){return false;}}
 async function showPrompt(d){const value=promptFor(d);if(await copyText(value))return;$('prompt-content').value=value;$('prompt-dialog').showModal();$('prompt-content').focus();$('prompt-content').select();}
 $('close-prompt').addEventListener('click',()=>$('prompt-dialog').close());$('copy-prompt').addEventListener('click',async()=>{if(await copyText($('prompt-content').value))$('prompt-dialog').close();else{$('prompt-content').focus();$('prompt-content').select();notify('请使用 ⌘C 或 Ctrl+C 复制选中的文字。');}});
