@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#193e37">
+<title>AWS SAA · 30 天学习计划</title>
+<style>
+:root{--paper:#f5f4ee;--white:#fff;--ink:#20332f;--muted:#62716b;--green:#214e43;--lime:#d9f0b0;--line:#dfe4dc;--orange:#bd6129;--soft:#edf2e9;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.65}button,input,select,textarea{font:inherit}button,a,input,select,textarea,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--green);text-underline-offset:4px}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #88a968;outline-offset:4px}button{border:0}button:disabled{cursor:default;opacity:.65}h1,h2,h3,p{margin:0}button,input,select,textarea{border-radius:9px}header{max-width:1440px;margin:auto;padding:24px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.3px}.brand-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--green);color:var(--lime);font-size:17px}.brand small{font-size:12px;color:var(--muted);font-weight:500;display:block;letter-spacing:1.5px}.header-meta{font-size:12px;color:var(--muted);display:flex;gap:16px;align-items:center}.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:650;letter-spacing:.5px;padding:4px 10px;background:var(--soft);border-radius:100px}.layout{max-width:1440px;margin:auto;padding:34px 44px 60px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:32px}.sidebar{align-self:start;position:sticky;top:24px}.side-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px}.eyebrow{font-size:11px;letter-spacing:1.7px;color:var(--muted);font-weight:700}.progress-number{display:flex;align-items:baseline;gap:8px;margin-top:8px}.progress-number strong{font-size:46px;line-height:1.2;letter-spacing:-2px}.progress-number span{color:var(--muted);font-size:12px}.track{height:7px;border-radius:100px;background:#e8eee4;overflow:hidden;margin:16px 0 10px}.track span{display:block;background:var(--green);height:100%;transition:width .2s}.small{font-size:12px;color:var(--muted)}.stats{display:flex;justify-content:space-between;margin:18px 0 22px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.stats strong{color:var(--ink);font-size:18px;padding-right:4px}.primary{background:var(--green);color:white;padding:11px 18px;font-weight:600}.full{width:100%}.date-setting{display:block;margin-top:22px;font-size:12px;color:var(--muted)}.date-setting input{width:100%;background:white;border:1px solid var(--line);padding:9px 10px;margin:6px 0;color:var(--ink)}.week-nav{display:grid;gap:8px;margin:22px 0}.week-nav button{text-align:left;padding:13px 15px;background:transparent;border:1px solid transparent;color:var(--ink);display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:center}.week-nav button:hover{background:#e8eee3}.week-nav button.active{background:var(--green);color:white}.week-nav button.active .small{color:#d0e0d5}.week-num{font-size:11px;border:1px solid #bac8bc;border-radius:50%;height:26px;width:26px;display:grid;place-items:center}.week-nav strong{font-size:13px;font-weight:650}.week-nav .small{display:block;font-size:11px}.utility{border-top:1px solid var(--line);padding:18px 3px 0}.utility-actions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px}.ghost{color:var(--green);border:1px solid #ccd7c9;background:transparent;padding:7px 11px;font-size:12px}.ghost:hover{background:var(--soft)}.hero{position:relative;overflow:hidden;background:#193e37;color:white;border-radius:22px;padding:34px 36px;min-height:240px}.hero .eyebrow{color:#c7d8c3;letter-spacing:2px}.hero h1{font-size:36px;line-height:1.4;letter-spacing:-.8px;position:relative;margin:12px 0}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:530px;color:#d1e0d7;font-size:13px;position:relative}.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;position:relative}.hero-tags span{font-size:11px;padding:4px 10px;border:1px solid #628171;border-radius:100px;color:#dbe9d6}.orbit{position:absolute;width:300px;height:300px;border:1px solid #3c6051;border-radius:50%;right:-100px;top:-15px}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #3c6051;border-radius:50%;inset:35px}.orbit:after{inset:70px}.orbit-dot{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--lime);right:128px;top:35px}.intro{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;padding:22px 0 26px}.intro-item{padding-left:13px;border-left:2px solid #bfd1b3}.intro strong{display:block;font-size:13px}.intro p{font-size:12px;color:var(--muted);margin-top:3px}.section-heading{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin:13px 0 17px}.section-heading h2{font-size:22px;letter-spacing:-.4px}.section-heading p{font-size:13px;color:var(--muted);margin-top:4px}.section-count{white-space:nowrap;padding-top:6px;font-size:12px;color:var(--muted)}.week-meter{height:3px;background:#dfe7da;border-radius:5px;margin-top:12px}.week-meter span{display:block;background:#6d9164;height:100%;transition:width .2s}.filters{display:flex;gap:8px;margin:16px 0;align-items:center;flex-wrap:wrap}.filter{font-size:12px;background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 13px;border-radius:100px}.filter[aria-pressed=true]{background:#e0ead8;border-color:#b6cda8;color:var(--green);font-weight:600}.search{margin-left:auto;max-width:225px;min-width:120px;border:1px solid var(--line);padding:7px 11px;background:white;font-size:12px;color:var(--ink)}.days{display:grid;gap:12px}.day{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;scroll-margin-top:24px}.day[open]{border-color:#abc4a5}.day.complete{background:#fcfdf9}.day summary{list-style:none;display:flex;gap:15px;align-items:center;cursor:pointer;padding:18px 20px}.day summary::-webkit-details-marker{display:none}.day-marker{flex-shrink:0;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--green);font-size:17px;font-weight:650}.day.complete .day-marker{background:var(--green);color:var(--lime)}.day-main{flex:1;min-width:0}.day-title{font-size:15px;font-weight:650}.day-meta{font-size:11px;color:var(--muted);margin-top:2px}.day-right{display:flex;align-items:center;gap:15px;font-size:11px;color:var(--muted);white-space:nowrap}.arrow{font-size:16px;color:#758675;display:block;transition:transform .2s}.day[open] .arrow{transform:rotate(180deg)}.day-body{padding:0 22px 22px 77px}.goal{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:15px;margin-bottom:13px}.goal strong{color:var(--green)}.tasks{display:grid;gap:10px}.task{display:flex;align-items:flex-start;gap:10px;font-size:13px;padding:9px 11px;border:1px solid #e5eadf;border-radius:9px;cursor:pointer;background:#fcfdf9}.task:hover{background:#f1f6e9}.task input{width:17px;height:17px;accent-color:var(--green);margin:3px 0 0;flex-shrink:0;cursor:pointer}.task input:checked+span{color:#6c7d67;text-decoration:line-through;text-decoration-color:#a6b69e}.task b{font-size:11px;display:inline-block;color:var(--orange);margin-right:7px;font-weight:650}.tools{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:14px}.tools a{font-size:11px}.copy{font-size:11px;padding:7px 11px;background:#edf2e9;color:var(--green)}.notes-label{font-size:11px;color:var(--muted);display:block;margin-top:15px}.note{width:100%;border:1px solid var(--line);padding:10px;resize:vertical;min-height:65px;background:#fff;font-size:12px;display:block;margin-top:5px;color:var(--ink)}.mock{padding:12px 14px;border-radius:10px;background:#f4f2e6;margin-top:14px;font-size:12px}.mock input[type=number]{width:66px;border:1px solid #d2d4c7;background:white;padding:4px 7px;color:var(--ink);margin:0 4px}.fresh{display:block;margin-top:8px}.fresh input{accent-color:var(--green);vertical-align:middle}.score-result{margin-left:10px;font-size:11px;color:var(--muted)}.empty{padding:35px;text-align:center;border:1px dashed var(--line);border-radius:14px;font-size:13px;color:var(--muted)}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:26px 0 16px}.guide-card{border:1px solid var(--line);background:#eeefe5;border-radius:var(--radius);padding:21px}.guide-card h3{font-size:14px;margin-bottom:8px}.guide-card p,.guide-card li{font-size:12px;color:var(--muted)}.guide-card ul{margin:8px 0 0;padding-left:18px}.readiness{background:#e6eedc}.readiness strong{font-size:13px;color:var(--green)}.resource-box{border:1px solid var(--line);border-radius:var(--radius);background:white;padding:20px}.resource-box summary{cursor:pointer;font-size:14px;font-weight:650}.resource-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}.resource-links a{font-size:12px}.resource-box p{font-size:12px;color:var(--muted)}.glossary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.glossary div{background:var(--soft);padding:11px;border-radius:9px;font-size:12px}.glossary strong{display:block;color:var(--green)}footer{font-size:11px;color:var(--muted);padding-top:18px;display:flex;justify-content:space-between;gap:14px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:white;border-radius:12px;padding:12px 20px;box-shadow:0 6px 30px #0002;z-index:20;max-width:90vw;font-size:13px}.storage-warning{background:#fff0df;border:1px solid #e3bd96;padding:13px 16px;border-radius:12px;font-size:13px;margin-bottom:15px;color:#7a421b}.hidden,[hidden]{display:none!important}.skip{position:fixed;top:-100px;left:20px;background:white;padding:12px;z-index:30}.skip:focus{top:10px}dialog{border:1px solid var(--line);border-radius:18px;max-width:560px;width:calc(100% - 36px);padding:26px;color:var(--ink);background:var(--paper)}dialog::backdrop{background:#102b2666}dialog h2{font-size:19px;margin-bottom:10px}dialog p{font-size:13px;color:var(--muted)}dialog textarea{width:100%;min-height:200px;margin:15px 0;border:1px solid var(--line);padding:12px;background:white;font-size:13px;color:var(--ink)}.dialog-actions{display:flex;justify-content:flex-end;gap:8px}.field-label{font-size:12px;color:var(--muted)}
+@media(min-width:1300px){.hero h1{font-size:40px}}
+@media(max-width:1000px){header{padding:20px 26px}.layout{padding:26px;grid-template-columns:230px minmax(0,1fr);gap:23px}.hero{padding:27px}.hero h1{font-size:29px}.intro{gap:10px}.day-body{padding-left:22px}.day-title{font-size:14px}}
+@media(max-width:740px){header{padding:16px 20px}.header-meta .version-date{display:none}.layout{display:block;padding:20px}.sidebar{position:static}.side-card{padding:18px}.side-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.progress-number strong{font-size:34px}.progress-number{margin:2px 0}.side-card .track{margin:10px 0 6px}.stats{margin:8px 0 0;padding-top:8px}.side-card .primary{width:auto;white-space:nowrap;font-size:12px;padding:10px 12px}.date-setting{margin-top:12px}.date-setting input{width:auto;margin-left:9px;padding:5px 8px}.week-nav{grid-template-columns:1fr 1fr;gap:6px;margin:14px 0}.week-nav button{padding:9px;gap:7px;background:#eaf0e3}.week-nav .small{font-size:10px}.utility{padding:8px 0 16px;border-top:0}.utility-actions{margin-bottom:5px}.hero{padding:25px;min-height:220px}.hero h1{font-size:28px}.hero p{font-size:12px}.orbit{right:-160px}.orbit-dot{right:64px}.intro{grid-template-columns:1fr;padding:18px 0;gap:12px}.section-heading h2{font-size:20px}.day summary{padding:14px;gap:10px}.day-marker{width:36px;height:36px;font-size:15px;border-radius:10px}.day-right{gap:8px}.day-body{padding:0 14px 16px}.goal,.task{font-size:12px}.search{flex:1;max-width:none;width:100%;margin-left:0;flex-basis:100%}.bottom-grid{grid-template-columns:1fr}.resource-links,.glossary{grid-template-columns:1fr}footer{display:block}footer span{display:block;margin-top:4px}.section-count{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{body{background:white;font-size:12px}.sidebar,header,.hero,.intro,.filters,.tools,.utility,.toast,dialog,.skip,footer{display:none!important}.layout{display:block;padding:0}.day{break-inside:avoid;margin-bottom:10px}.day-body{display:block!important;padding-left:20px}.day summary{padding:10px}.day-right .arrow{display:none}.bottom-grid{display:block}.guide-card{margin-top:12px}.note{min-height:45px}.resource-box{margin-top:15px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#plan">跳到学习任务</a>
+<header>
+ <div class="brand"><span class="brand-icon" aria-hidden="true">↗</span><div>AWS 学习手账<small>ONE DAY AT A TIME</small></div></div>
+ <div class="header-meta"><span class="version-date">30 天 · 一个月冲刺</span><span class="pill">SAA-C03</span></div>
+</header>
+<div class="layout">
+ <aside class="sidebar" aria-label="学习进度与周计划">
+  <div class="side-card">
+   <div class="side-top"><div><div class="eyebrow">我的学习进度</div><div class="progress-number"><strong id="total-percent">0%</strong><span>任务完成</span></div></div><button class="primary full" id="continue">继续学习 ↗</button></div>
+   <div class="track" role="progressbar" aria-label="全部任务完成度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-track"><span style="width:0%"></span></div>
+   <div class="small" id="total-tasks">0 / 90 项任务</div>
+   <div class="stats"><span><strong id="completed-days">0</strong>/ 30 天完成</span><span><strong id="remaining-days">30</strong>天待学</span></div>
+   <label class="date-setting">学习开始日期<input type="date" id="start-date" min="2020-01-01" max="2100-12-01"></label>
+   <p class="small" id="date-range"></p>
+  </div>
+  <nav class="week-nav" aria-label="选择学习阶段" id="week-nav"></nav>
+  <div class="utility">
+   <div class="utility-actions"><button class="ghost" id="export">导出进度</button><button class="ghost" id="import">导入进度</button></div>
+   <p class="small" id="save-status" role="status">进度保存在当前浏览器。换设备或清理浏览器前，请先导出备份。</p>
+   <input hidden type="file" id="import-file" accept="application/json,.json">
+  </div>
+ </aside>
+ <main id="plan">
+  <div class="storage-warning" id="storage-warning" role="alert" hidden>浏览器无法保存进度。当前仍可打勾，请及时导出备份，关闭页面前确认已导出。</div>
+  <section class="hero" aria-label="学习计划简介">
+   <div class="orbit" aria-hidden="true"></div><div class="orbit-dot" aria-hidden="true"></div>
+   <div class="eyebrow">YOUR 30-DAY STUDY PLAN</div>
+   <h1>从「听过」到「会选」。<br><em>每天，向 SAA 靠近一步。</em></h1>
+   <p>先理解服务解决什么问题，再练习根据场景选方案。每天完成三件小事：学一学、讲清楚、练一练。</p>
+   <div class="hero-tags"><span>每天约 2–3 小时</span><span>AI 讲解 / 视频任选</span><span>每周回顾 · 三次模拟</span></div>
+  </section>
+  <div class="intro">
+   <div class="intro-item"><strong>01 / 按自己的基础调整</strong><p>熟悉的内容快速复习；不懂的先补课。日期是参考，任务可随时补做。</p></div>
+   <div class="intro-item"><strong>02 / 真做完，再打勾</strong><p>能用自己的话解释、能说出选项理由，才算这次练习有收获。</p></div>
+   <div class="intro-item"><strong>03 / 把疑问留下来</strong><p>每天记下一个不懂的点。复制学习提问给 AI，或用课程补这一段。</p></div>
+  </div>
+  <section aria-labelledby="week-title">
+   <div class="section-heading"><div><div class="eyebrow" id="week-kicker"></div><h2 id="week-title"></h2><p id="week-description"></p></div><span class="section-count" id="week-count"></span></div>
+   <div class="week-meter" aria-hidden="true"><span id="week-bar" style="width:0%"></span></div>
+   <div class="filters" aria-label="筛选学习任务"><button class="filter" data-filter="all" aria-pressed="true">全部</button><button class="filter" data-filter="pending" aria-pressed="false">待完成</button><button class="filter" data-filter="complete" aria-pressed="false">已完成</button><input class="search" id="search" type="search" aria-label="搜索本阶段的主题与任务" placeholder="搜索本阶段，如 S3、数据库…"></div>
+   <div class="days" id="days"></div>
+  </section>
+  <div class="bottom-grid">
+   <section class="guide-card"><h3>每天怎么学？</h3><p>参考节奏：讲解 60 分钟 → 自己解释 20 分钟 → 练题 / 画图 30 分钟 → 复盘 10 分钟。模拟日单独留出约 3 小时。</p><ul><li>AI 或视频都可以主讲，关键细节用官方资料核对。</li><li>错题写三句话：题目要什么、为什么选它、其他选项差在哪。</li><li>实操前看费用；结束后删除实验资源。暂时没账号可以先画图推演。</li></ul></section>
+   <section class="guide-card readiness"><div class="eyebrow">考前检查</div><h3 style="margin-top:7px">完成计划 ≠ 已经准备好考试</h3><p id="readiness-text">先完成学习，再用没做过的模拟题检验自己。</p><p style="margin-top:10px">参考目标：至少两套首次作答的独立模拟题达到 80%，并能解释错题。这个目标用于规划，不是 AWS 官方通过线，也不保证通过。</p></section>
+  </div>
+  <details class="resource-box"><summary>学习资料与常见词 · 需要时再打开</summary>
+   <div class="resource-links">
+    <a href="https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03.html" target="_blank" rel="noopener noreferrer">AWS 官方 SAA-C03 考试指南 ↗</a>
+    <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" rel="noopener noreferrer">官方练习题与备考入口 ↗</a>
+    <a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/" target="_blank" rel="noopener noreferrer">Stéphane Maarek 主课程（可选）↗</a>
+    <a href="https://docs.aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS 服务文档：核对功能和限制 ↗</a>
+   </div>
+   <p>模拟题优先使用官方或正规独立练习题。AI 出题适合检查理解，难度和分数不能直接代表真实考试。</p>
+   <div class="glossary">
+    <div><strong>Region / AZ · 地域 / 可用区</strong>地域是一片地理区域；一个地域里有多个彼此隔离的可用区。练习解释“放在多个可用区”有什么用。</div>
+    <div><strong>高可用 / 可扩展</strong>高可用：局部出故障时仍能提供服务。可扩展：用户变多时，系统能增加处理能力。</div>
+    <div><strong>托管 / Serverless</strong>托管：AWS 帮你管理部分工作。Serverless：你无需直接管理服务器，但仍要管理代码、配置和权限。</div>
+    <div><strong>RTO / RPO · 恢复目标</strong>RTO：最多能停多久。RPO：最多能丢失多长时间的数据。选灾备方案前，先问清这两个要求。</div>
+   </div>
+   <p>考试范围：安全 30% · 弹性 26% · 高性能 24% · 成本优化 20%。计划按主题学习，四类要求会交叉出现。以报考时的官方指南为准。</p>
+  </details>
+  <footer><span>小步前进，把「为什么」学明白。</span><span>内容核对：2026-09-30 · 学习计划草稿</span></footer>
+ </main>
+</div>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="prompt-dialog" aria-labelledby="prompt-heading"><h2 id="prompt-heading">把这个提问发给 AI</h2><p>先听讲，再自己回答。碰到重要功能或限制，让 AI 给出 AWS 官方文档依据。</p><label class="field-label" for="prompt-content">今日学习提问</label><textarea id="prompt-content" readonly></textarea><div class="dialog-actions"><button class="ghost" id="close-prompt">关闭</button><button class="primary" id="copy-prompt">复制文字</button></div></dialog>
+<noscript><p style="padding:30px">请开启浏览器 JavaScript，才能查看每日计划、打勾和保存进度。</p></noscript>
+<script>
+'use strict';
+const weeks = [
+ {name:'打好基础',range:'第 1–7 天',description:'认识 AWS，搞懂权限、服务器、网络和存储。',goal:'能画出一个简单网站的基本结构。'},
+ {name:'把服务组合起来',range:'第 8–14 天',description:'让应用更可靠：分流、扩容、数据库、缓存和消息队列。',goal:'能解释为什么单台服务器不够，以及该怎么改。'},
+ {name:'补齐考点，练场景题',range:'第 15–21 天',description:'补安全、容器、数据迁移和灾备，再练习根据要求选方案。',goal:'每道题都能说出需求、理由和取舍。'},
+ {name:'模拟考试与收尾',range:'第 22–30 天',description:'三次限时模拟，穿插专项复习，最后检查是否适合赴考。',goal:'用陌生题验证水平，不用重复题的记忆判断准备程度。'}
+];
+// 每天三项任务：学习 → 自己解释 → 应用。内容可通过 AI、视频或官方文档学习。
+const plan = [
+ ['认识 AWS 和考试','AWS 基础','先有一张地图，再记服务名称。',
+  '认识地域、可用区、共享责任模型；读官方考试指南，了解四类考察方向。',
+  '用自己的话解释：AWS 管什么，我管什么？地域和可用区有什么区别？',
+  '做 10 道诊断题，按权限、网络、存储、数据库分类记录薄弱点；不追求这次分数。'],
+ ['IAM：谁可以做什么','权限','分清“身份”和“允许做的事”。',
+  '学习用户、组、角色、策略和 MFA；理解最小权限、临时凭证、显式拒绝。',
+  '解释：EC2 访问 S3 为什么适合使用角色？为什么不把长期密钥写进代码？',
+  '画出“应用 → 角色 → S3”的访问关系，练 8 道权限题；有账号可验证只读权限。'],
+ ['EC2：租一台云服务器','计算','能根据负载选择服务器与购买方式。',
+  '学习 EC2、AMI、实例类型；比较按需、Spot、Reserved Instances 和 Savings Plans。',
+  '解释：稳定运行的网站、可中断的批处理，各适合哪种购买方式？承诺折扣和容量预留有什么区别？',
+  '练 8 道计算与成本题；有账号可观察 EC2 配置页，确认费用后再决定是否创建并清理。'],
+ ['VPC：应用放在哪里','网络','看懂流量进入和离开网络的路线。',
+  '学习 VPC、CIDR、公有 / 私有子网、路由表、Internet Gateway 和 NAT Gateway。',
+  '解释：私有子网中的服务器如何主动访问互联网？“公有子网”是否等于所有资源可被外部访问？',
+  '画一个包含公有子网和私有子网的网站，标出每条路由；练 8 道网络题。'],
+ ['网络访问：允许谁进来','网络 / 安全','分清访问控制和不同连接方式。',
+  '比较安全组和网络 ACL；认识 VPC Endpoint、Peering、Transit Gateway、VPN、Direct Connect 和 PrivateLink。',
+  '解释：安全组和网络 ACL 的返回流量处理有何不同？访问 S3 为什么可以考虑 VPC Endpoint？',
+  '做 10 道网络题；画出公司网络连接 AWS 的两种方案，写下各自适用条件。'],
+ ['S3、EBS、EFS：数据放哪里','存储','按对象、块、文件三种需求选存储。',
+  '学习 S3、EBS、EFS、FSx 的用途；认识 S3 版本控制、存储类别、生命周期、复制和加密。',
+  '解释：图片、EC2 磁盘、多个应用共享文件，分别用什么？归档前为何要考虑取回时间和费用？',
+  '练 10 道存储题；有账号可创建私有 S3 桶并上传 / 下载小文件，完成后删除实验资源。'],
+ ['第一周回顾与补课','回顾','把零散服务连成一个简单架构。',
+  '回顾 IAM、EC2、VPC 和存储，只重学诊断与练习中不懂的部分。',
+  '不看笔记，画出“用户 → 网站服务器 → 私有数据”的关系，并解释权限和网络路径。',
+  '做 20 道混合题，记录答错和猜对的题；列出下周要补的三个问题。'],
+ ['负载均衡和自动扩缩','高可用 / 扩展','用户变多或服务器坏掉时，网站仍能工作。',
+  '比较 ALB、NLB、GWLB；学习健康检查、Auto Scaling、多可用区和无状态应用。',
+  '解释：负载均衡器与 Auto Scaling 分别解决什么？为什么把会话只放在一台 EC2 上会有问题？',
+  '把第 7 天的网站改成多可用区架构，练 10 道扩缩容题；有账号再选择是否实操并清理。'],
+ ['RDS 和 Aurora：关系型数据库','数据库','区分“防故障”和“提高读取能力”。',
+  '学习 RDS、Aurora、备份恢复、Multi-AZ、只读副本和 RDS Proxy；注意不同部署类型的差别。',
+  '解释：业务要求故障后继续服务、读取请求太多，各应优先考虑什么？不要把所有 Multi-AZ 形式混为一谈。',
+  '练 10 道数据库题，分别标出可用性、读写性能、连接数量这三类需求。'],
+ ['DynamoDB 与缓存','数据库 / 性能','根据数据访问方式选数据库，而不只看容量。',
+  '学习 DynamoDB 分区键、按需 / 预置容量、索引和 Global Tables；比较 DAX 与 ElastiCache。',
+  '解释：购物车数据为什么可能适合 DynamoDB？缓存能缓解什么问题，为什么还要考虑过期和一致性？',
+  '做 10 道数据库与缓存题，整理 RDS / DynamoDB / ElastiCache 的使用场景。'],
+ ['SQS、SNS、EventBridge：让应用松耦合','消息','组件不用互相等待，才能各自扩展。',
+  '学习队列、发布订阅、事件路由；比较 SQS 标准 / FIFO、死信队列与可见性超时。',
+  '解释：订单处理排队、多方同时收通知、按事件规则触发任务，分别更适合什么服务？',
+  '画出“下单 → 队列 → 处理订单”的流程，练 10 道消息题并标出重复处理与顺序要求。'],
+ ['Lambda、API Gateway 与工作流','无服务器','按请求运行代码，用托管服务减少服务器管理。',
+  '认识 Lambda、API Gateway、Step Functions 和 Cognito；学习并发、重试和执行时间限制的影响。',
+  '解释：短时请求和长时间后台任务为什么可能需要不同方案？Step Functions 如何串起多个步骤？',
+  '设计一个“上传图片后自动处理”的流程，练 10 道无服务器题；关键限制查官方文档。'],
+ ['Route 53、CloudFront 与监控','网络 / 运维','让用户找到服务、访问更快，并发现异常。',
+  '学习 Route 53 路由策略和健康检查；比较 CloudFront / Global Accelerator；区分 CloudWatch / CloudTrail / Config。',
+  '解释：DNS、内容缓存、流量加速分别解决什么？监控指标、操作审计、配置记录用哪个服务？',
+  '为跨地区网站选择 DNS 与加速方案，练 10 道网络和监控题，并写一条告警思路。'],
+ ['第二周回顾：设计一个购物网站','回顾','把应用、数据库、缓存和队列连起来。',
+  '复习第 8–13 天，整理最容易混淆的五组服务。',
+  '画购物网站：分流、扩容、数据库、订单队列、图片存储；解释每个选择解决什么问题。',
+  '做 25 道混合题，给错题标上安全、弹性、性能或成本；本周没学会的内容先补齐。'],
+ ['加密、密钥和应用安全','安全','保护数据、凭证和面向外部的应用。',
+  '学习 KMS、ACM、Secrets Manager、Parameter Store；比较 WAF、Shield、GuardDuty 和 Macie 的用途。',
+  '解释：存储加密、传输加密、密码轮换各管什么？KMS 密钥权限为什么也要单独考虑？',
+  '做 15 道安全题，把防护需求分成“挡攻击、发现威胁、找敏感数据、保管秘密”。'],
+ ['多账号、容器和自动部署','治理 / 计算','知道何时用组织管理，何时选容器。',
+  '认识 Organizations、SCP、IAM Identity Center、Control Tower；比较 ECS / EKS / Fargate，认识 CloudFormation。',
+  '解释：SCP 会直接授予权限吗？Fargate 帮你省去什么管理工作？为什么用模板部署架构？',
+  '练 12 道治理和计算题；给“多团队多账号”和“已有容器应用”各写一个简单方案。'],
+ ['数据迁移、混合存储与分析','数据','分清搬文件、搬数据库、收流数据和查询数据。',
+  '比较 DataSync、Storage Gateway、Transfer Family、DMS 和迁移规划工具；认识 Kinesis、Firehose、Glue、Athena、EMR、Redshift、Lake Formation 与 Amazon Quick。',
+  '解释：同步文件、迁移数据库、处理实时日志、查询 S3 数据，为什么需要不同工具？',
+  '练 12 道迁移与分析题，画一条“收日志 → 存 S3 → 转格式 → 查询”的数据路径。'],
+ ['备份和灾难恢复','弹性','按允许停机多久、允许丢多少数据来选恢复方案。',
+  '学习 RTO / RPO、AWS Backup；比较备份恢复、Pilot Light、Warm Standby 与多站点同时运行。',
+  '解释：跨可用区和跨地域分别防什么问题？为什么最贵的灾备方案不一定最适合？',
+  '给一个“最多停 1 小时、最多丢 15 分钟数据”的业务比较方案，练 12 道灾备题并核对条件。'],
+ ['成本优化：先满足需求，再省钱','成本','同时考虑运行、存储、请求和数据传输的费用。',
+  '复习购买方式、存储生命周期、数据库容量和跨区传输；认识 Budgets、Cost Explorer 与成本标签。',
+  '解释：可中断批处理怎么省钱？归档有什么取回代价？为什么一个 NAT 的成本选择可能影响可用性？',
+  '做 15 道成本题，每题先写不可牺牲的要求，再排除只便宜但不满足需求的选项。'],
+ ['专项场景题：学会排除','练题','先找到决定答案的条件，再看服务名字。',
+  '整理服务对比表：S3 / EBS / EFS、ALB / NLB、RDS / DynamoDB、SQS / SNS、VPN / Direct Connect。',
+  '解释题目中的关键词：最少运维、最低成本、容错、低延迟、不可修改代码。给每个词举一个例子。',
+  '做 25 道场景题，先写答案理由再看解析；把猜对的题也加入复盘。'],
+ ['第三周回顾与查漏','回顾','补薄弱点，给全真模拟留出时间。',
+  '回顾安全、灾备、迁移和成本；对照官方考试范围检查遗漏，额外服务先了解用途和适用场景。',
+  '不看笔记讲解本周三个难点；每个难点举一个该用和一个不该用的例子。',
+  '做 25 道混合题，选出两个最弱主题；准备三套未做过、带解析的独立模拟题。'],
+ ['第一次限时模拟：找问题','模拟考试','完整走一遍考试节奏，重点找出真实弱项。',
+  '准备未做过的 65 题模拟卷，设 130 分钟；关闭笔记，中途不查资料。',
+  '完成全部题目，记录不确定的题、是否做完，以及剩余时间；不要边答边看解析。',
+  '核对解析，记录成绩；按知识不会、读漏条件、服务混淆、时间不足分类错题。'],
+ ['修补弱项一','补课','先修最常出错的一类问题。',
+  '选第 22 天错题最多的主题，重学相关服务与官方文档；只补具体缺口。',
+  '挑三道错题，用自己的话解释正确答案和每个错误选项；说不清的继续补。',
+  '做 15 道该主题的新题验证理解；保存最容易忘的三条结论。'],
+ ['修补弱项二','补课','修第二类弱点，特别关注网络与权限条件。',
+  '选第二个弱主题，检查是否把可用性、性能或成本混为一谈。',
+  '把该主题画成一个小架构图，解释数据怎么走、权限怎么给、故障时怎么办。',
+  '做 15 道新的专项题，与第一次模拟对比错误类型是否减少。'],
+ ['混合练习与考场节奏','练题','让选择流程稳定下来。',
+  '复习服务对比表和高频错题，把笔记压缩成一页关键词。',
+  '练习答题顺序：读需求 → 找硬条件 → 排除不满足的方案 → 比较剩余方案；难题先标记。',
+  '限时 60 分钟做 30 道新混合题，检查速度与理由；明天的模拟卷保留到正式计时。'],
+ ['第二次限时模拟：验证进步','模拟考试','用新题检验补课效果。',
+  '换一套未做过的 65 题模拟卷，完整计时 130 分钟，不查资料。',
+  '完成所有题目，标记猜测与不确定的题；尽量留出回看时间。',
+  '记录成绩、复盘所有错题和猜对题；比较第一次模拟，写下仍未解决的两项问题。'],
+ ['最后补课：把两个问题解决','补课','把精力放在还不稳的知识上。',
+  '针对第 26 天的两个问题补课，核对关键服务条件、限制与配置。',
+  '把每个问题写成“看到什么需求 → 考虑什么方案 → 必须确认什么条件”。',
+  '各做 8 道新题验证，回看第一周以来的疑问；第三套模拟卷今天不提前做。'],
+ ['第三次限时模拟：考前检验','模拟考试','检查稳定性，而不只看最好的一次成绩。',
+  '再换一套未做过的 65 题模拟卷，按 130 分钟完整作答；用独立题源检验水平。',
+  '完成作答并核对解析，记录成绩；检查是否仍因同一类原因反复出错。',
+  '综合三次模拟：参考至少两套首次作答达到 80%，能解释错题且时间够用；达不到就优先补课。'],
+ ['决定考试安排','准备','根据真实表现决定赴考或延后。',
+  '回顾一页笔记：权限、网络、存储、数据库、消息、高可用、灾备和成本，不再大范围加新内容。',
+  '检查最近两次模拟、错题理由和答题时间；薄弱点仍明显就调整考试日期，避免只因计划打满勾而赴考。',
+  '确认预约、证件姓名、考试语言与时间；线下确认路线，线上按考点要求做系统测试和环境准备。'],
+ ['轻复习与休息','收尾','用清醒的状态完成最后一步。',
+  '轻读一页笔记和常错服务对比，复述三个最容易混淆的概念。',
+  '确认考试安排和证件，准备好路线或线上环境；保留足够睡眠。',
+  '若尚未准备好，写下下一阶段的两个学习目标；已赴考则待收到正式结果后再记录，不把计划完成当作通过。']
+].map((row,i)=>({id:i+1,week:i<7?0:i<14?1:i<21?2:3,title:row[0],tag:row[1],goal:row[2],tasks:row.slice(3),mock:[22,26,28].includes(i+1),time:[22,26,28].includes(i+1)?'约 3 小时':i+1===30?'约 1 小时':'约 2–3 小时'}));
+const STORAGE_KEY='aws-saa-study-plan-v1';
+const $=id=>document.getElementById(id);
+const labels=['学一学','讲清楚','练一练'];
+const docBase='https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/';
+function taipeiToday(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const get=t=>parts.find(p=>p.type===t).value;return `${get('year')}-${get('month')}-${get('day')}`;}
+function dateOK(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&value>='2020-01-01'&&value<='2100-12-01'&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value;}
+function initialState(){return {version:1,startDate:taipeiToday(),tasks:{},notes:{},scores:{}};}
+function validateState(data){
+ if(!data||data.version!==1||!dateOK(data.startDate)||typeof data.tasks!=='object'||!data.tasks||Array.isArray(data.tasks)||typeof data.notes!=='object'||!data.notes||Array.isArray(data.notes)||typeof data.scores!=='object'||!data.scores||Array.isArray(data.scores))throw new Error('这不是有效的学习进度备份。');
+ const result=initialState();result.startDate=data.startDate;
+ for(const d of plan){for(let i=0;i<3;i++){const key=`${d.id}-${i}`;if(Object.hasOwn(data.tasks,key)){if(typeof data.tasks[key]!=='boolean')throw new Error('任务数据格式不正确。');result.tasks[key]=data.tasks[key];}}
+  if(Object.hasOwn(data.notes,d.id)){if(typeof data.notes[d.id]!=='string'||data.notes[d.id].length>3000)throw new Error('笔记格式不正确或超过长度限制。');result.notes[d.id]=data.notes[d.id];}
+  if(d.mock&&Object.hasOwn(data.scores,d.id)){const s=data.scores[d.id];if(!s||typeof s.fresh!=='boolean'||!(s.correct===null||(Number.isInteger(s.correct)&&s.correct>=0&&s.correct<=65)))throw new Error('模拟题成绩格式不正确。');result.scores[d.id]={correct:s.correct,fresh:s.fresh};}
+ }return result;
+}
+let state=initialState(),storageAvailable=true,loadWarning='';
+try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)state=validateState(JSON.parse(saved));}catch(error){loadWarning='无法读取已保存的进度。可导入备份；旧数据在下一次保存前不会被主动删除。';if(error.name==='SecurityError')storageAvailable=false;}
+let selectedWeek=0,filter='all',query='',openDays=new Set(),toastTimer;
+function doneCount(d){return d.tasks.filter((_,i)=>state.tasks[`${d.id}-${i}`]===true).length;}
+function finished(d){return doneCount(d)===3;}
+const firstPending=plan.find(d=>!finished(d));selectedWeek=firstPending?firstPending.week:3;if(firstPending)openDays.add(firstPending.id);
+function notify(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4000);}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));storageAvailable=true;$('storage-warning').hidden=true;$('save-status').textContent='已自动保存。进度保存在当前浏览器，换设备前请导出备份。';}catch(error){storageAvailable=false;$('storage-warning').hidden=false;$('save-status').textContent='当前无法自动保存，请导出备份。';}}
+function dateFor(day){const date=new Date(state.startDate+'T00:00:00Z');date.setUTCDate(date.getUTCDate()+day-1);return date.toISOString().slice(0,10);}
+function shortDate(day){const parts=dateFor(day).split('-');return `${Number(parts[1])} 月 ${Number(parts[2])} 日`;}
+function elem(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
+function updateProgress(){
+ const count=plan.reduce((n,d)=>n+doneCount(d),0),days=plan.filter(finished).length,percent=Math.round(count/90*100);
+ $('total-percent').textContent=percent+'%';$('total-tasks').textContent=`${count} / 90 项任务`;$('completed-days').textContent=days;$('remaining-days').textContent=30-days;
+ $('overall-track').setAttribute('aria-valuenow',percent);$('overall-track').firstElementChild.style.width=percent+'%';$('start-date').value=state.startDate;$('date-range').textContent=`${shortDate(1)} — ${shortDate(30)} · 30 天参考安排`;
+ $('continue').textContent=days===30?'回顾学习 ↗':'继续学习 ↗';
+ const subset=plan.filter(d=>d.week===selectedWeek),weekCount=subset.reduce((n,d)=>n+doneCount(d),0);
+ $('week-count').textContent=`${weekCount} / ${subset.length*3} 项完成`;$('week-bar').style.width=(weekCount/(subset.length*3)*100)+'%';
+ document.querySelectorAll('[data-week]').forEach(b=>{const w=Number(b.dataset.week),group=plan.filter(d=>d.week===w);b.querySelector('.small').textContent=`${weeks[w].range} · ${group.filter(finished).length}/${group.length} 天完成`;});
+ const recorded=plan.filter(d=>d.mock&&state.scores[d.id]?.correct!==null&&state.scores[d.id]?.correct!==undefined);
+ const qualifies=recorded.filter(d=>state.scores[d.id].fresh&&state.scores[d.id].correct>=52);
+ const scoreText=recorded.map(d=>`第 ${d.id} 天 ${Math.round(state.scores[d.id].correct/65*100)}%`).join(' · ');
+ $('readiness-text').textContent=!recorded.length?'先完成学习，再用没做过的模拟题检验自己。':`${scoreText}。${qualifies.length>=2?'已有两套首次作答达到参考目标；还要检查错题能否解释、作答是否独立且按时完成。':'继续补弱项，再用新题验证；参考目标只统计勾选“首次作答”的成绩。'}`;
+}
+function renderNav(){
+ $('week-nav').replaceChildren();weeks.forEach((w,i)=>{const b=elem('button',i===selectedWeek?'active':'');b.dataset.week=i;b.setAttribute('aria-current',i===selectedWeek?'step':'false');b.append(elem('span','week-num',String(i+1).padStart(2,'0')));const div=elem('span');div.append(elem('strong','',w.name),elem('span','small',''));b.append(div);b.addEventListener('click',()=>chooseWeek(i));$('week-nav').append(b);});
+}
+function chooseWeek(index){selectedWeek=index;filter='all';query='';$('search').value='';const next=plan.find(d=>d.week===index&&!finished(d));if(next)openDays.add(next.id);renderNav();renderDays();updateProgress();}
+function scopeLink(d){const domain=d.tag.includes('安全')||d.id===2?'domain1':d.tag.includes('成本')?'domain4':d.tag.includes('性能')||[6,9,10,13,17].includes(d.id)?'domain3':'domain2';return docBase+`solutions-architect-associate-03-${domain}.html`;}
+function createDay(d){
+ const card=elem('details','day'+(finished(d)?' complete':''));card.id='day-'+d.id;card.open=openDays.has(d.id);
+ card.addEventListener('toggle',()=>{if(card.open)openDays.add(d.id);else openDays.delete(d.id);});
+ const summary=elem('summary');summary.append(elem('span','day-marker',finished(d)?'✓':String(d.id).padStart(2,'0')));
+ const head=elem('div','day-main');head.append(elem('div','day-title',d.title),elem('div','day-meta',`第 ${d.id} 天 · ${shortDate(d.id)} · ${d.time} · ${d.tag}`));summary.append(head);
+ const right=elem('div','day-right');right.append(elem('span','day-count',`${doneCount(d)}/3`),elem('span','arrow','⌄'));summary.append(right);card.append(summary);
+ const body=elem('div','day-body'),goal=elem('p','goal');goal.append(elem('strong','','今天的目标：'),document.createTextNode(d.goal));body.append(goal);
+ const tasks=elem('div','tasks');d.tasks.forEach((task,i)=>{const label=elem('label','task'),check=elem('input');check.type='checkbox';check.checked=state.tasks[`${d.id}-${i}`]===true;check.dataset.task=`${d.id}-${i}`;check.setAttribute('aria-label',`第 ${d.id} 天 ${labels[i]}：${task}`);const content=elem('span');content.append(elem('b','',labels[i]),document.createTextNode(task));label.append(check,content);check.addEventListener('change',()=>{state.tasks[`${d.id}-${i}`]=check.checked;save();card.classList.toggle('complete',finished(d));card.querySelector('.day-marker').textContent=finished(d)?'✓':String(d.id).padStart(2,'0');card.querySelector('.day-count').textContent=`${doneCount(d)}/3`;updateProgress();if(filter!=='all')renderDays();});tasks.append(label);});body.append(tasks);
+ const tools=elem('div','tools'),copy=elem('button','copy','复制今日学习提问 ↗');copy.addEventListener('click',()=>showPrompt(d));const link=elem('a','',d.id===1||d.id>=21?'官方备考入口 ↗':'相关考试要求 ↗');link.href=d.id===1||d.id>=21?'https://aws.amazon.com/certification/certified-solutions-architect-associate/':scopeLink(d);link.target='_blank';link.rel='noopener noreferrer';tools.append(copy,link);body.append(tools);
+ if(d.mock){const mock=elem('div','mock'),line=elem('label','','模拟成绩：答对 '),score=elem('input');score.type='number';score.min='0';score.max='65';score.step='1';score.inputMode='numeric';score.setAttribute('aria-label',`第 ${d.id} 天模拟考试答对题数`);score.value=state.scores[d.id]?.correct??'';const result=elem('span','score-result');function updateScoreLabel(){const n=state.scores[d.id]?.correct;result.textContent=n===null||n===undefined?'未记录':Math.round(n/65*100)+'%';}updateScoreLabel();line.append(score,document.createTextNode(' / 65 题'),result);mock.append(line);const fresh=elem('label','fresh'),flag=elem('input');flag.type='checkbox';flag.checked=state.scores[d.id]?.fresh??false;fresh.append(flag,document.createTextNode(' 这套题是首次作答，已按 130 分钟独立完成'));mock.append(fresh);score.addEventListener('change',()=>{const n=score.value===''?null:Number(score.value);if(n!==null&&(!Number.isInteger(n)||n<0||n>65)){notify('请输入 0–65 之间的整数。');score.value=state.scores[d.id]?.correct??'';return;}state.scores[d.id]={correct:n,fresh:flag.checked};save();updateScoreLabel();updateProgress();});flag.addEventListener('change',()=>{const old=state.scores[d.id]?.correct??null;state.scores[d.id]={correct:old,fresh:flag.checked};save();updateProgress();});body.append(mock);}
+ const noteLabel=elem('label','notes-label','今天的疑问 / 错题提醒'),note=elem('textarea','note');note.rows=2;note.maxLength=3000;note.placeholder='例如：Multi-AZ 和只读副本，我还分不清…';note.value=state.notes[d.id]??'';note.id=`note-${d.id}`;noteLabel.htmlFor=note.id;note.addEventListener('input',()=>{state.notes[d.id]=note.value;save();});body.append(noteLabel,note);card.append(body);return card;
+}
+function renderDays(){
+ const w=weeks[selectedWeek];$('week-kicker').textContent=`阶段 ${String(selectedWeek+1).padStart(2,'0')} / ${w.range}`;$('week-title').textContent=w.name;$('week-description').textContent=w.description;
+ document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
+ const visible=plan.filter(d=>d.week===selectedWeek&&(filter==='all'||(filter==='complete'?finished(d):!finished(d)))&&[d.title,d.tag,d.goal,...d.tasks].join(' ').toLowerCase().includes(query.toLowerCase()));
+ $('days').replaceChildren(...visible.map(createDay));if(!visible.length)$('days').append(elem('div','empty',query?'这个阶段没有匹配的主题。试试其他关键词或切换阶段。':filter==='pending'?'本阶段的任务都完成了。可以切换下一阶段，或回看笔记。':'本阶段还没有完成的学习日。每天三项任务都勾选后会出现在这里。'));
+}
+function promptFor(d){return `我正在准备 AWS SAA-C03，今天是第 ${d.id} 天，主题是“${d.title}”。请用简单中文教我，先解释服务解决什么问题，再解释服务之间的区别。今天的目标：${d.goal}\n\n学习任务：\n${d.tasks.map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\n请先问我两道基础问题，了解我的水平，然后按小节讲解。每小节让我用自己的话解释，确认理解后再继续。最后用新的场景题检验我，一次一题，等我回答和说明理由后再给解析；说明其他选项为什么不合适。涉及服务限制、功能和配置时，请核对并链接 AWS 官方文档，不确定的内容请明确指出。模拟考试日请帮我准备流程或复盘，我会使用独立模拟题检验成绩。`;}
+async function copyText(value){try{await navigator.clipboard.writeText(value);notify('已复制，可以粘贴给 AI 开始学习。');return true;}catch(error){return false;}}
+async function showPrompt(d){const value=promptFor(d);if(await copyText(value))return;$('prompt-content').value=value;$('prompt-dialog').showModal();$('prompt-content').focus();$('prompt-content').select();}
+$('close-prompt').addEventListener('click',()=>$('prompt-dialog').close());$('copy-prompt').addEventListener('click',async()=>{if(await copyText($('prompt-content').value))$('prompt-dialog').close();else{$('prompt-content').focus();$('prompt-content').select();notify('请使用 ⌘C 或 Ctrl+C 复制选中的文字。');}});
+$('continue').addEventListener('click',()=>{const next=plan.find(d=>!finished(d))??plan[29];chooseWeek(next.week);openDays.add(next.id);const card=$('day-'+next.id);card.open=true;card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});});
+$('start-date').addEventListener('change',()=>{if(!dateOK($('start-date').value)){notify('请选择有效的开始日期。');$('start-date').value=state.startDate;return;}state.startDate=$('start-date').value;save();renderDays();updateProgress();notify('日期已调整，已完成的任务和笔记会保留。');});
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;renderDays();}));
+$('search').addEventListener('input',()=>{query=$('search').value.trim();renderDays();});
+$('export').addEventListener('click',()=>{const payload={...state,exportedAt:new Date().toISOString()};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=elem('a');a.href=url;a.download=`AWS-SAA-学习进度-${taipeiToday()}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('备份已导出，包含勾选、笔记、日期和模拟题成绩。');});
+$('import').addEventListener('click',()=>$('import-file').click());
+$('import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>500000)throw new Error('文件过大，请选择导出的学习进度 JSON。');const imported=validateState(JSON.parse(await file.text()));if(!confirm('导入会替换当前的勾选、笔记、日期和模拟题成绩。建议先导出当前备份。确定导入吗？'))return;state=imported;openDays.clear();const next=plan.find(d=>!finished(d));if(next)openDays.add(next.id);chooseWeek(next?next.week:3);save();notify(storageAvailable?'进度已导入并保存。':'进度已导入；浏览器无法保存，请及时导出备份。');}catch(error){notify(error instanceof SyntaxError?'文件内容不是有效的 JSON。':error.message||'无法导入这个文件。');}finally{event.target.value='';}});
+renderNav();renderDays();updateProgress();if(!storageAvailable)$('storage-warning').hidden=false;if(loadWarning)notify(loadWarning);
+</script>
+</body>
+</html>
