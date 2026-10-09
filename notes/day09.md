@@ -1,8 +1,8 @@
-# Day 09：Lambda、API Gateway 与工作流
+# Day 09：Lambda、API Gateway、工作流与 Cognito
 
 学习日期：2026-10-09
 
-按重排后的计划编号，对应原主题 12。主线：谁接请求、谁执行代码、谁协调流程，以及权限、并发、网络和重复处理的边界。
+按重排后的计划编号，对应原主题 12。主线：谁接请求、谁执行代码、谁协调流程，以及权限、并发、网络和重复处理的边界；补充应用用户登录与直接访问 AWS 资源的区别。
 
 ## 1. 知识树
 
@@ -70,15 +70,22 @@ Day9：无服务器应用
 │     ├─ 配置公有子网不会自动获得公网 IPv4 地址
 │     └─ 常见路径：私有子网网络接口 → NAT Gateway → IGW → 外网
 │
-└─ ⑧ 调用方式有什么区别？
-   ├─ Synchronous Invocation（同步调用）
-   │  ├─ 调用方等待函数结果，例如 API Gateway 查询订单
-   │  └─ Lambda 不自动重试函数错误；调用方或服务按自身规则处理
-   └─ Asynchronous Invocation（异步调用）
-      ├─ 先接收事件，后处理，例如 S3 上传触发生成缩略图
-      ├─ 接收成功不代表任务完成
-      ├─ Lambda 管理队列，按配置和错误类型重试
-      └─ 可能重复投递，代码仍需考虑幂等性
+├─ ⑧ 调用方式有什么区别？
+│  ├─ Synchronous Invocation（同步调用）
+│  │  ├─ 调用方等待函数结果，例如 API Gateway 查询订单
+│  │  └─ Lambda 不自动重试函数错误；调用方或服务按自身规则处理
+│  └─ Asynchronous Invocation（异步调用）
+│     ├─ 先接收事件，后处理，例如 S3 上传触发生成缩略图
+│     ├─ 接收成功不代表任务完成
+│     ├─ Lambda 管理队列，按配置和错误类型重试
+│     └─ 可能重复投递，代码仍需考虑幂等性
+│
+└─ ⑨ 顾客怎样登录？——Cognito（用户身份管理）
+   ├─ User Pool（用户池）：管理注册、登录，签发 Token（令牌）
+   │  └─ 顾客带令牌调用订单 API；后台检查身份与订单归属
+   ├─ Identity Pool（身份池）：获取 Temporary AWS Credentials（临时 AWS 凭证）
+   │  └─ 应用按对应 IAM Role（角色）的权限直接访问 S3 等资源
+   └─ 两者可独立或组合使用；只经后台处理业务通常无需 Identity Pool
 ```
 
 ## 2. 最容易混淆的边界
@@ -91,6 +98,8 @@ Day9：无服务器应用
 | 超时 vs 回滚 | 执行终止，不代表之前的数据库写入、扣款被撤销 |
 | API Gateway vs NAT Gateway | 前者管理 API 请求；后者提供相应出网路径 |
 | 公有子网 vs 公有 IP | 前者描述路由，后者是公网可寻址地址 |
+| User Pool vs Identity Pool | 前者处理应用登录、签发令牌；后者提供访问 AWS 资源的临时凭证 |
+| IAM vs 控制台管理员 | IAM 管理 AWS 操作权限，也适用于应用、服务和临时角色会话 |
 | 接收成功 vs 处理成功 | 异步接收后，任务可能仍未执行或执行失败 |
 
 **食谱与厨房的类比**：AWS 保存的代码、配置像食谱；执行环境像厨房。厨房可以更换，食谱仍在。最终订单、图片应存到数据库或 S3 等外部存储。
@@ -125,18 +134,43 @@ S3 原图上传 → 事件 → Lambda 读取、缩图 → S3 保存结果
 
 API Gateway 能调用函数，不代表函数能访问互联网。私有数据库查询走内部路径；外部支付请求需要独立配置出网路径。
 
-## 5. 学习记录
+## 5. Cognito：两种身份路径
+
+**User Pool（用户池）像会员登记处**：核实顾客身份，发 Token（令牌）。令牌可以交给正确配置的 API Gateway 验证，但不是直接访问 S3 的 AWS 凭证。
+
+**Identity Pool（身份池）像临时通行证办理处**：接受受信任的身份凭据，为应用获取对应 IAM Role（角色）的临时 AWS 凭证；角色决定能访问哪些资源、执行哪些操作。
+
+```text
+① 顾客找鞋店后台查订单
+顾客 → User Pool 登录 → 获得 Token
+     → API Gateway 验证令牌 → Lambda → 数据库
+                                   └─ 后台检查订单是否属于当前顾客
+
+② 手机直接上传照片到 S3（一种实现方式）
+顾客 → User Pool 登录 → 获得 Token
+     → Identity Pool 换取临时 AWS 凭证 → 手机直接上传 S3
+                                       └─ IAM 权限限制为顾客自己的照片目录
+```
+
+- 第一种路径：顾客不需要获得后台的 AWS 访问权限；后台使用自己的执行角色访问资源。
+- 第二种路径：手机直接调用 AWS API，必须有相应凭证和有效权限。不能因为已登录，就允许访问所有顾客的数据。
+- 两个 Pool 不必总是配套：Identity Pool 也可接受其他受信任身份提供者的身份凭据。
+- IAM（身份与访问管理）不只服务于 AWS Console（控制台）管理员。EC2 程序、Lambda 和获得临时凭证的手机应用，都可能通过角色权限访问 AWS 服务。
+- 补充引导题：顾客注册、登录并携带令牌调用订单 API，选择 **User Pool**；已澄清它与 Identity Pool 的区别。
+
+## 6. 学习记录
 
 - 已完成：上面知识树中的核心讲解与引导题；重点澄清代码保留、执行环境回收、公有子网、两种并发控制，以及工作流与普通函数代码的取舍。
 - 综合选择题：10 道新场景题首次提交全部正确，**10/10**。
 - 答案：A、B、C、B、C、A、B、C、B、C。
 - 覆盖：S3 事件、执行角色、持久状态、API 入口、审批工作流、幂等付款、并发上限、预置环境溢出、VPC 出网、异步重复事件。
 - 成绩表示本轮选择正确；未逐题要求独立解释全部理由，不等于已验证所有实际配置能力。
-- 待补充：原计划提到的 Cognito（用户身份服务）、SQS（简单队列服务）任务接收，以及 Lambda 测试事件与日志实验；本节尚未讲解或完成。
+- 已补充：Cognito 的 User Pool、Identity Pool、两种访问路径，以及 IAM 不只用于控制台管理员的概念。
+- 待补充：原计划提到的 SQS（简单队列服务）任务接收，以及 Lambda 测试事件与日志实验；尚未讲解或完成。
 - 本节未进行 AWS 控制台实操或创建资源。
 - 下一节按重排计划为 Day10「DynamoDB 与缓存」。
 
-## 6. 官方参考
+## 7. 官方参考
 
 - [Lambda 概述与执行环境](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 - [代码部署包与配置](https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-zip.html)
@@ -153,3 +187,4 @@ API Gateway 能调用函数，不代表函数能访问互联网。私有数据�
 - [异步错误与重试](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html)
 - [EC2 RI 概述](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html)
 - [Regional / Zonal RI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html)
+- [Cognito：User Pool 与 Identity Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html)
