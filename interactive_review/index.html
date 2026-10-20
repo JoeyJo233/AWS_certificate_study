@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172b31">
+  <meta name="description" content="沿着一笔 Amazon 订单，用交互架构图、故障实验和场景测验复习 AWS SAA。">
+  <title>云上购物课 · AWS 交互复习</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="labs.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到学习内容</a>
+  <aside class="sidebar" aria-label="学习导航">
+    <a class="brand" href="#journey" aria-label="云上购物课首页"><span class="brand-mark" aria-hidden="true">a<span>↗</span></span><span>云上购物课<small>AWS ARCHITECTURE LAB</small></span></a>
+    <div class="sidebar-label">沿着一笔订单，理解 AWS</div>
+    <nav id="navigation" aria-label="学习模块"></nav>
+    <div class="sidebar-progress"><span class="eyebrow">YOUR PROGRESS</span><div class="progress-line"><strong id="progress-count">0 / 8</strong><span>旅程已完成</span></div><div class="progress-track" role="progressbar" aria-label="章节学习进度" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="chapter-progress"><span></span></div><p>能解释清楚，再标记完成。<br>今天走一小段，也算前进。</p></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="storage-label">本地学习 · 自动保存</span><small>AMAZON CASE / SAA REVIEW</small></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb">AWS SAA <span>/</span> <strong id="breadcrumb-label">购物旅程</strong></div><div class="top-actions"><button class="text-button" data-action="import">导入进度</button><button class="text-button" data-action="export">导出进度 <span aria-hidden="true">↗</span></button></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="site-footer"><span>教学案例：具体搭配用于学习，非 Amazon 内部架构披露。</span><button class="text-button" data-view="sources">AWS 官方资料 ↗</button></footer>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <dialog id="service-dialog" aria-labelledby="dialog-heading"><button class="dialog-close" data-action="close-dialog" aria-label="关闭服务解释">×</button><div id="dialog-content"></div></dialog>
+  <input type="file" id="import-progress" accept="application/json,.json" hidden>
+  <noscript><p class="no-script">请开启 JavaScript，以使用交互架构图、测验和进度保存。</p></noscript>
+</body>
+</html>
